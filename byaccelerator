@@ -1,0 +1,24 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Pet Sim x By Accelerator", "Sentinel")
+ 
+local Tab1 = Window:NewTab("autohatch")
+local Tab1Section = Tab1:NewSection("auto hatch")
+Tab1Section:NewToggle("Auto hatch", "Auto hatch", function(state)
+    if state then
+        _G.autohatch1 = true
+while _G.autohatch1 == true do
+local args = {
+    [1] = {
+        [1] = "Cracked Egg",
+        [2] = false
+    }
+}
+
+workspace.__THINGS.__REMOTES:FindFirstChild("buy egg"):InvokeServer(unpack(args))
+wait()
+end
+    else
+        _G.autohatch1 = false
+    end
+end)
+local Tab = Window:NewTab("soon!")
